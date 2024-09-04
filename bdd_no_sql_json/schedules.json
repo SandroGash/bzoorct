@@ -1,0 +1,9 @@
+[
+  { "Day": "Lundi", "opening": "09:00", "closing": "17:00" },
+  { "Day": "Mardi", "opening": "09:00", "closing": "17:00" },
+  { "Day": "Mercredi", "opening": "09:00", "closing": "17:00" },
+  { "Day": "Jeudi", "opening": "09:00", "closing": "17:00" },
+  { "Day": "Vendredi", "opening": "09:00", "closing": "17:00" },
+  { "Day": "Samedi", "opening": "10:00", "closing": "18:00" },
+  { "Day": "Dimanche", "opening": "10:00", "closing": "18:00" }
+]

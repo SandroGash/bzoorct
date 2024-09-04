@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Demande d'informations",
+    "email_visitor": "johndoe@example.com",
+    "object": "Horaires d'ouverture du zoo",
+    "request": "Bonjour, je voudrais savoir si le zoo est ouvert les jours fériés. Merci de votre réponse."
+  },
+  {
+    "title": "Réservation de groupe",
+    "email_visitor": "janedoe@example.com",
+    "object": "Réservation pour 20 personnes",
+    "request": "Bonjour, je souhaite réserver pour un groupe de 20 personnes le 5 octobre. Pouvez-vous confirmer la disponibilité ?"
+  },
+  {
+    "title": "Question sur les tarifs",
+    "email_visitor": "michellemail@example.com",
+    "object": "Tarifs pour les enfants",
+    "request": "Bonjour, pouvez-vous me dire si vous proposez des réductions pour les enfants de moins de 5 ans ?"
+  },
+  {
+    "title": "Proposition de partenariat",
+    "email_visitor": "business@example.com",
+    "object": "Collaboration avec le zoo",
+    "request": "Bonjour, nous sommes une entreprise de conservation de la faune et serions intéressés par une collaboration avec votre zoo. Merci de nous contacter pour discuter des détails."
+  },
+  {
+    "title": "Demande d'accessibilité",
+    "email_visitor": "access@example.com",
+    "object": "Accès pour personnes handicapées",
+    "request": "Bonjour, pourriez-vous me fournir des informations sur les facilités d'accès pour les personnes en fauteuil roulant ? Merci."
+  },
+  {
+    "title": "Candidature pour un stage",
+    "email_visitor": "student@example.com",
+    "object": "Stage en soins animaliers",
+    "request": "Bonjour, je suis étudiant en biologie et je souhaite effectuer un stage en soins animaliers dans votre zoo. Je vous joins mon CV et ma lettre de motivation."
+  }
+]
