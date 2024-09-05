@@ -102,4 +102,10 @@ CREATE TABLE report (
 );
 
 
-   
+CREATE TABLE race_habitat (
+    race_id INT ,
+    habitat_id INT,
+    PRIMARY KEY (race_id, habitat_id),   
+    FOREIGN KEY (race_id) REFERENCES race (race_id),
+    FOREIGN KEY (habitat_id) REFERENCES habitat (habitat_id)
+);  
