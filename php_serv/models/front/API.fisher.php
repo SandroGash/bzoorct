@@ -68,7 +68,7 @@ class APIFIsher extends Model {
     }
 
     public function getDBServices(){
-        $req = "SELECT * FROM services
+        $req = "SELECT * FROM service
         ";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->execute();

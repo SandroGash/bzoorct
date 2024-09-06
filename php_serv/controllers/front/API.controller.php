@@ -1,5 +1,6 @@
 <?php
 require_once "models/front/API.fisher.php";
+require_once "models/Model.php";
 
 class APIController {
     private $apiFisher;
@@ -10,37 +11,28 @@ class APIController {
 
     public function getAnimals(){
         $animals = $this->apiFisher->getDBAnimals();
-        echo "<pre>";
-        print_r ($animals);
-        echo "</pre>";
+        Model::sendJSON($animals);
     }
 
     public function getAnimal($idAnimal){
         $infosAnimal = $this->apiFisher->getDBAnimal($idAnimal);
-        echo "<pre>";
-        print_r ($infosAnimal);
-        echo "</pre>";
+        Model::sendJSON($infosAnimal);
     }
 
     public function getHabitats(){
         $habitats = $this->apiFisher->getDBHabitats();
-        echo "<pre>";
-        print_r ($habitats);
-        echo "</pre>";
+        Model::sendJSON($habitats);
     }
 
     public function getRaces(){
         $races = $this->apiFisher->getDBRaces();
-        echo "<pre>";
-        print_r ($races);
-        echo "</pre>";
+        Model::sendJSON($races);
+       
     }
 
     public function getRace($idRace){
         $infosRace = $this->apiFisher->getDBRace($idRace);
-        echo "<pre>";
-        print_r ($infosRace);
-        echo "</pre>";;
+        Model::sendJSON($infosRace);
     }
 
     public function getUser(){
@@ -53,9 +45,7 @@ class APIController {
 
     public function getServices(){
         $services = $this->apiFisher->getDBServices();
-        echo "<pre>";
-        print_r ($services);
-        echo "</pre>";;
+        Model::sendJSON($services);
     }
 
     public function getReports(){

@@ -246,4 +246,12 @@ UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Jungl
 UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Savane') WHERE name IN ('Lézar', 'Macaque', 'Aigle', 'Mésange', 'Elephant', 'Phacochère', 'Girafe', 'Gueppard', 'Hyène', 'Lion', 'Lionne');
 UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Marais') WHERE name IN ('Alligator', 'Canard', 'Cigogne', 'Crocodile', 'Grenouille');
 
+use bzoorctsql;
+
+INSERT INTO service (name, description, image_id)
+VALUES 
+('Le grand air', 'Les visites donnent faim, notre restaurant y remédie. Profitez du grand air et des plats variés, élaborés par nos chefs. Réservez par téléphone, ou passez par la rubrique CONTACT.', NULL),
+('Visite guidée', 'Notre parc est vaste, mais vous ne vous perdrez jamais grâce à nos guides. Réservez sur place, il y aura toujours de la place.', NULL),
+('Zoo Express', 'Ce train électrique est né pendant la conception du zoo. Sa transition énergétique s’est faite naturellement, pour le bien-être des résidents. Réservez sur place.', NULL);
+
 

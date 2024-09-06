@@ -15,4 +15,11 @@ abstract class Model {
         }
         return self::$pdo;
     }
+
+    public static function sendJSON($info){
+        //Autorisation de récupération des données de l'API
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json");
+        echo json_encode($info);
+    }
 }
