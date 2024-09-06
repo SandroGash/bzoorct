@@ -237,3 +237,13 @@ WHERE race_id IN (
 UPDATE animal
 SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Marais')
 WHERE name IN ('Luna', 'Chico');
+
+ALTER TABLE race
+ADD habitat_id INT,
+ADD FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id);
+
+UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Jungle') WHERE name IN ('Caméléon', 'Gorille', 'Iguane', 'Jaguar', 'Léopard', 'Orang-outan', 'Tigre', 'Perroquet');
+UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Savane') WHERE name IN ('Lézar', 'Macaque', 'Aigle', 'Mésange', 'Elephant', 'Phacochère', 'Girafe', 'Gueppard', 'Hyène', 'Lion', 'Lionne');
+UPDATE race SET habitat_id = (SELECT habitat_id FROM habitat WHERE name = 'Marais') WHERE name IN ('Alligator', 'Canard', 'Cigogne', 'Crocodile', 'Grenouille');
+
+

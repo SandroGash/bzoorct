@@ -16,19 +16,31 @@ class APIController {
     }
 
     public function getAnimal($idAnimal){
-        echo "données JSON de l'animal ".$idAnimal." demandées";
+        $infosAnimal = $this->apiFisher->getDBAnimal($idAnimal);
+        echo "<pre>";
+        print_r ($infosAnimal);
+        echo "</pre>";
     }
 
     public function getHabitats(){
-        echo "données JSON des habitats demandées";
+        $habitats = $this->apiFisher->getDBHabitats();
+        echo "<pre>";
+        print_r ($habitats);
+        echo "</pre>";
     }
 
     public function getRaces(){
-        echo "données JSON des races demandées";
+        $races = $this->apiFisher->getDBRaces();
+        echo "<pre>";
+        print_r ($races);
+        echo "</pre>";
     }
 
-    public function getRace(){
-        echo "données JSON de la race demandées";
+    public function getRace($idRace){
+        $infosRace = $this->apiFisher->getDBRace($idRace);
+        echo "<pre>";
+        print_r ($infosRace);
+        echo "</pre>";;
     }
 
     public function getUser(){
@@ -40,7 +52,10 @@ class APIController {
     }
 
     public function getServices(){
-        echo "données JSON des services demandées";
+        $services = $this->apiFisher->getDBServices();
+        echo "<pre>";
+        print_r ($services);
+        echo "</pre>";;
     }
 
     public function getReports(){

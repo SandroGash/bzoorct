@@ -32,9 +32,14 @@ try{
                     break;
                     case "races": $apiController -> getRaces();
                     break;
-                    case "race": $apiController -> getRace();
+                    case "race":
+                        if(empty($url[2])) throw new Exception("L'identifiant de cette espèce est manquant!");
+                        $apiController -> getRace($url[2]);
                     break;
-                    case "user": $apiController -> getUser();
+                    case "user": 
+                        if(empty($url[2])) throw new Exception("L'identifiant de l'utilisateur est manquant!");
+                    $apiController -> getUser($url[2]);
+                    
                     break;
                     case "users": $apiController -> getUsers();
                     break;
