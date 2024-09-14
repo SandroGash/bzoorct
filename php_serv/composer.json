@@ -1,0 +1,33 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.packagist.org",
+      "options": {
+        "ssl": {
+          "verify_peer": false,
+          "allow_self_signed": true,
+          "cafile": "C:/xampp/php/extras/ssl/cacert.pem",
+          "capath": "DIRECTORY_PATH_TO_YOUR_CAFILE"
+        }
+      }
+    }
+  ],
+  "name": "zoo/management",
+  "description": "systeme de gestion des elements du zoo et de son personnel",
+  "type": "project",
+  "disable-tls": false,
+  "autoload": {
+    "psr-4": {
+      "Zoo\\Management\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "psr/log": "dev-master",
+    "firebase/php-jwt": "^6.10",
+    "slim/slim": "^4.14",
+    "slim/psr7": "^1.7",
+    "vlucas/phpdotenv": "^5.6"
+  }
+}

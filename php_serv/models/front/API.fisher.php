@@ -18,10 +18,11 @@ class APIFIsher extends Model {
     }
 
     public function getDBAnimal($idAnimal){
-        $req = "SELECT a.name AS animal_name, r.name AS race_name, h.name AS habitat_name
+        $req = "SELECT a.name AS animal_name, r.name AS race_name, h.name AS habitat_name, i.image_URL
                 FROM animal a
                 INNER JOIN race r ON r.race_id = a.race_id
                 INNER JOIN habitat h ON h.habitat_id = a.habitat_id
+                INNER JOIN image i ON a.image_id = i.image_id
                 WHERE a.animal_id = :idAnimal
         ";
         $stmt = $this->getBdd()->prepare($req);

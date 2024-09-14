@@ -8,6 +8,8 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "
 require_once "controllers/front/API.controller.php";
 
 $apiController = new APIController();
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 
 try{
