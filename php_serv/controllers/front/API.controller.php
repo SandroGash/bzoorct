@@ -49,10 +49,12 @@ class APIController {
     }
 
     public function getReports(){
-        echo "données JSON des rapports demandées";
+        $reports = $this->apiFisher->getDBReports();
+        Model::sendJSON($reports);
     }
 
     public function getFood(){
-        echo "données JSON des repas demandées";
+        $food = $this->apiFisher->getDBFood();
+        Model::sendJSON($food);
     }
 }

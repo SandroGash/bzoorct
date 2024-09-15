@@ -5,11 +5,11 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
-// Inclure les contrôleurs et middleware
+
 require_once 'controllers/UserController.php';
 require_once 'middleware/JWTHandler.php';
 
-// Créer l'application Slim
+//Slim
 $app = AppFactory::create();
 
 // Middleware pour parser le corps des requêtes en JSON
@@ -28,7 +28,7 @@ $app->post('/api/login', function (Request $request, Response $response, $args) 
     return $response->withHeader('Content-Type', 'application/json');
 });
 
-// Route pour l'inscription
+// Route pour la création
 $app->post('/api/register', function (Request $request, Response $response, $args) {
     $data = $request->getParsedBody();
     $username = $data['username'] ?? '';
