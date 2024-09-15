@@ -18,10 +18,11 @@ class APIFIsher extends Model {
     }
 
     public function getDBAnimal($idAnimal){
-        $req = "SELECT a.name AS animal_name, r.name AS race_name, h.name AS habitat_name
+        $req = "SELECT a.name AS animal_name, r.name AS race_name, h.name AS habitat_name, i.image_URL
                 FROM animal a
                 INNER JOIN race r ON r.race_id = a.race_id
                 INNER JOIN habitat h ON h.habitat_id = a.habitat_id
+                INNER JOIN image i ON a.image_id = i.image_id
                 WHERE a.animal_id = :idAnimal
         ";
         $stmt = $this->getBdd()->prepare($req);
@@ -75,5 +76,27 @@ class APIFIsher extends Model {
         $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $services;
+    }
+
+
+    public function getDBReports(){
+        $req = "SELECT * FROM service
+        ";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->execute();
+        $reports = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $reports;
+    }
+
+
+    public function getDBFood(){
+        $req = "SELECT * FROM food
+        ";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->execute();
+        $food = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $food;
     }
 }
