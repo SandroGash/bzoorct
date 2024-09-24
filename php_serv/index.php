@@ -1,4 +1,9 @@
 <?php
+require "./vendor/autoload.php";
+// Permettre l'accès CORS
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // Formatage automatique de réécriture de l'URL (chemin absolu)
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http").
@@ -23,8 +28,8 @@ try {
 
         // Gestion des routes d'API via Slim
         if ($url[0] === "api") {
-            // Inclure le fichier de routage Slim pour l'API
-            require_once __DIR__ . '/routes/web.php';
+            // Routage Slim pour l'API
+            require_once '/routes/web.php';
             exit(); // Stopper l'exécution du fichier ici car Slim prend le relais
         }
 
@@ -38,9 +43,13 @@ try {
                     case "animal":
                         if (empty($url[2])) throw new Exception("L'identifiant de l'animal est manquant!");
                         $apiController->getAnimal($url[2]);
-                        break;
+                        break;                    
                     case "habitats": 
                         $apiController->getHabitats();
+                        break;
+                    case "habitat":
+                        if (empty($url[2])) throw new Exception("Le nom de cet habitat est manquant!");
+                        $apiController->getHabitat($url[2]); // Utilisation du nom au lieu de l'ID
                         break;
                     case "races": 
                         $apiController->getRaces();

@@ -18,10 +18,16 @@ class APIController {
         $infosAnimal = $this->apiFisher->getDBAnimal($idAnimal);
         Model::sendJSON($infosAnimal);
     }
+   
 
     public function getHabitats(){
         $habitats = $this->apiFisher->getDBHabitats();
         Model::sendJSON($habitats);
+    }
+
+    public function getHabitat($id){
+        $infosHabitat = $this->apiFisher->getDBHabitat($id);
+        Model::sendJSON($infosHabitat);
     }
 
     public function getRaces(){

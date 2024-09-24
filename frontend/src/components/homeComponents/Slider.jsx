@@ -7,6 +7,11 @@ import { Autoplay, Pagination } from "swiper/modules";
 const Slider = () => {
   return (
     <Swiper
+      style={{
+        "--swiper-pagination-color": "#6B8E23",
+        "--swiper-pagination-bullet-inactive-color": "#FFFFE0",
+        "--swiper-pagination-bullet-inactive-opacity": "1",
+      }}
       modules={[Autoplay, Pagination]}
       spaceBetween={0}
       slidesPerView={1}
@@ -14,7 +19,7 @@ const Slider = () => {
       autoplay={{ delay: 3000 }}
       speed={900}
       loop={true}
-      className="w-full h-80" // Ajuste la hauteur du slider selon tes besoins
+      className="w-full h-80"
     >
       <SwiperSlide>
         <img
@@ -34,6 +39,13 @@ const Slider = () => {
         <img
           src="/images/slidepaysage/jungle.jpg"
           alt="Image 3"
+          className="w-full h-full object-cover"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="/images/slidepaysage/marais.jpg"
+          alt="Image 2"
           className="w-full h-full object-cover"
         />
       </SwiperSlide>

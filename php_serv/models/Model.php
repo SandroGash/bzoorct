@@ -18,8 +18,9 @@ abstract class Model {
 
     public static function sendJSON($info){
         //Autorisation de récupération des données de l'API
-        header("Access-Control-Allow-Origin: *");
-        header("Content-Type: application/json");
+        header("Access-Control-Allow-Origin: http://localhost:5173"); 
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
         echo json_encode($info);
     }
 }

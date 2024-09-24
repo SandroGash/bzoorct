@@ -1,16 +1,28 @@
 import React from "react";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, index }) => {
+  const backgroundColor = index % 2 === 0 ? "#FFFFE0" : "#E9DECB";
+
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+    <div
+      className="shadow-lg rounded-lg overflow-hidden"
+      style={{ backgroundColor }}
+    >
       <img
-        src={service.imageURL}
-        alt={service.title}
-        className="w-full h-48 object-cover"
+        src={`http://localhost${service.image_URL}`}
+        alt={service.name}
+        className="w-full rounded-lg h-custom-height object-cover"
+        onError={(e) => (e.target.src = "/path/to/default-image.jpg")}
       />
-      <div className="p-4">
-        <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
-        <p className="text-gray-600">{service.description}</p>
+      <div className="p-4 text-center">
+        <h2 className="text-xl font-jomolhari font-semibold mb-2">
+          {service.name}
+        </h2>
+        <p className="text-gray-600 font-jomolhari">
+          {service.description.length > 100
+            ? service.description.substring(0, 200) + "..."
+            : service.description}
+        </p>
       </div>
     </div>
   );

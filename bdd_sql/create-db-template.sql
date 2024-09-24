@@ -254,4 +254,46 @@ VALUES
 ('Visite guidée', 'Notre parc est vaste, mais vous ne vous perdrez jamais grâce à nos guides. Réservez sur place, il y aura toujours de la place.', NULL),
 ('Zoo Express', 'Ce train électrique est né pendant la conception du zoo. Sa transition énergétique s’est faite naturellement, pour le bien-être des résidents. Réservez sur place.', NULL);
 
+use bzoorctsql;
+
+INSERT INTO image (image_URL)
+VALUES ('/public/images/Photos/jungle/cameleon.jpg'),
+       ('/public/images/Photos/jungle/gorille.jpg'),
+       ('/public/images/Photos/jungle/iguane.jpg'),
+       ('/public/images/Photos/jungle/jaguar.jpg'),
+       ('/public/images/Photos/jungle/leopard.jpg'),
+       ('/public/images/Photos/jungle/lezard.jpg'),
+       ('/public/images/Photos/jungle/macaque.jpg'),
+       ('/public/images/Photos/jungle/orangutan.jpg'),
+       ('/public/images/Photos/jungle/perroquet.jpg'),
+       ('/public/images/Photos/jungle/tigre.jpg');
+
+use bzoorctsql;
+
+DROP Table admin;
+
+DROP Table user;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'vet', 'employee') NOT NULL,
+    authorized BOOLEAN NOT NULL
+);
+
+use bzoorctsql;
+
+SELECT service.name, service.description, image.image_url
+FROM service
+JOIN image ON service.image_id = image.image_id;
+
+use bzoorctsql;
+
+ALTER TABLE habitat ADD image_id int NULL;
+
+ALTER TABLE habitat ADD CONSTRAINT fk_image_id FOREIGN KEY (image_id) REFERENCES image(image_id) ; 
+
+
+
 

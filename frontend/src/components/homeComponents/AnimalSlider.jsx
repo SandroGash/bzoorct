@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 // Slider des têtes d'animaux
@@ -25,20 +24,27 @@ const AnimalSlider = () => {
 
   return (
     <Swiper
+      style={{
+        "--swiper-pagination-color": "#6B8E23",
+        "--swiper-pagination-bullet-inactive-color": "#B8860B",
+        "--swiper-pagination-bullet-inactive-opacity": "1",
+        "--swiper-pagination-bullet-size": "6px",
+        "--swiper-pagination-bullet-horizontal-gap": "6px",
+        "--swiper-pagination-bottom": "0px",
+      }}
       modules={[Pagination, Navigation]}
       spaceBetween={20}
       slidesPerView={4}
       pagination={{ clickable: true }}
-      navigation
       loop={true}
-      className="w-full h-40"
+      className="w-full object-cover object-bottom  mb-4 h-40"
     >
       {animals.map((animal, index) => (
         <SwiperSlide key={index}>
           <img
             src={animal.src}
             alt={animal.alt}
-            className="w-32 h-32 rounded-full object-cover mx-auto"
+            className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#6B8E23] object-cover mx-auto brightness-150"
           />
         </SwiperSlide>
       ))}
@@ -50,16 +56,16 @@ const AnimalSlider = () => {
 const ResidentsSection = () => {
   return (
     <div className="bg-[#FFFFE0] py-8 px-4">
-      <h2 className="text-4xl text-center font-jomolhari text-[#231301] mb-8">
+      <h2 className="text-[#231301] text-xl md:text-4xl font-jomolhari font-light py-3 pb-6 text-center">
         Nos résidents ont hâte de faire votre connaissance.
       </h2>
 
       {/* Arrière-plan image paysage */}
-      <div className="relative rounded-lg overflow-hidden mb-8">
+      <div className="relative rounded-lg overflow-hidden mb-6">
         <img
-          src="/images/slidepaysage/slideanimaux.jpg"
+          src="/images/slidepaysage/trees.jpg"
           alt="Paysage"
-          className="w-full h-64 object-cover"
+          className="w-full h-custom-height object-cover object-center"
         />
 
         {/* Slider des têtes d'animaux */}
@@ -74,7 +80,7 @@ const ResidentsSection = () => {
           to="/habitats"
           className="bg-[#231301] text-white font-jomolhari px-6 py-2 rounded-full text-xl hover:bg-[#4a2a19]"
         >
-          Nos résidents
+          Nos résidents et leurs habitats
         </Link>
       </div>
     </div>

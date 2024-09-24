@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         jomolhari: ["Jomolhari", "serif"],
       },
+      height: {
+        "custom-height": "25rem",
+      },
     },
   },
   plugins: [],

@@ -2,8 +2,22 @@ const AnimalsnosqlModel = require("../models/Animalsnosql.model");
 const Animalnosql = require("../models/Animalsnosql.model");
 
 module.exports.getAnimalsnosql = async (req, res) => {
-  const animalsnosql = await AnimalsnosqlModel.find();
-  res.status(200).json(animalsnosql);
+  try {
+    const { name, race } = req.query;
+    let filter = {};
+
+    if (name) {
+      filter.name = { $regex: new RegExp(name, "i") }; // Recherche insensible à la casse
+    }
+    if (race) {
+      filter.race = race; // Filtre par race
+    }
+
+    const animals = await Animalnosql.find(filter);
+    res.json(animals);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
 module.exports.setAnimalsnosql = async (req, res) => {

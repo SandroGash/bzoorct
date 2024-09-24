@@ -1,10 +1,16 @@
 import React from "react";
+import ContactForm from "../components/contact/ContactForm";
+import Header from "../components/layout/Header";
+import Navbar from "../components/layout/NavBar";
+import Footer from "../components/layout/Footer";
 
 const Contacts = () => {
   return (
     <div>
-      <h1>Contacts Page</h1>
-      {/* Contenu de la page Contacts */}
+      <Header />
+      <Navbar />
+      <ContactForm />
+      <Footer />
     </div>
   );
 };
