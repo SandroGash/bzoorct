@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/NavBar";
@@ -11,11 +10,11 @@ const Index = () => {
   return (
     <>
       <Header />
-      {/*<Navbar />*/}
-      {/*<Intro />*/}
-      {/*<ResidentsSection />*/}
-      {/*<OpinionsSlider />*/}
-      {/*<OpinionsForm />*/}
+      <Navbar />
+      <Intro />
+      <ResidentsSection />
+      <OpinionsSlider />
+      <OpinionsForm />
       <Footer />
     </>
   );

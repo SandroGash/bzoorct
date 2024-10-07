@@ -3,7 +3,7 @@
         'name' => 'zoo/management',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '09ba27c80a323c6adedb09b3185eca16c3706f19',
+        'reference' => '5d363f26d9cfa4bcc18136486021e4508690b43e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -189,7 +189,7 @@
         'zoo/management' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '09ba27c80a323c6adedb09b3185eca16c3706f19',
+            'reference' => '5d363f26d9cfa4bcc18136486021e4508690b43e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

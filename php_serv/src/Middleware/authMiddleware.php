@@ -1,5 +1,11 @@
 <?php
+namespace Zoo\Management\Middleware;
+
+use Zoo\Management\Middleware\JWTMiddleware;
+
 require_once 'JWTHandler.php';
+
+
 
 function authenticate() {
     $headers = apache_request_headers();

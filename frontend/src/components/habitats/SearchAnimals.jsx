@@ -11,7 +11,7 @@ const SearchAnimals = () => {
   const [filteredAnimals, setFilteredAnimals] = useState([]);
 
   // Requête pour récupérer les animaux de l'habitat
-  /*useEffect(() => {
+  useEffect(() => {
     axios
       .get("http://localhost/php_serv/front/animals")
       .then((response) => {
@@ -63,7 +63,7 @@ const SearchAnimals = () => {
     } else {
       setFilteredAnimals(animals); // Afficher tous les animaux si aucune race n'est sélectionnée
     }
-  }, [selectedRace, animals]);*/
+  }, [selectedRace, animals]);
 
   return (
     <div className="p-6 bg-[#E9DECB] rounded-lg shadow-md mx-auto">

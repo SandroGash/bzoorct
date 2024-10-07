@@ -9,14 +9,14 @@ import { Pagination, Autoplay } from "swiper/modules";
 const OpinionsSlider = () => {
   const [opinions, setOpinions] = useState([]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     axios
       .get("http://localhost:5000/opinions")
       .then((response) => setOpinions(response.data))
       .catch((error) =>
         console.error("Erreur lors du chargement des avis :", error)
       );
-  }, []);*/
+  }, []);
 
   return (
     <div className="bg-[#E9DECB] p-10">

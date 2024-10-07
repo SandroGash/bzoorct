@@ -12,14 +12,14 @@ const ContactForm = () => {
   const [csrfToken, setCsrfToken] = useState("");
   const [loading, setLoading] = useState(false);
 
-  /*useEffect(() => {
+  useEffect(() => {
     axios
       .get("http://localhost:5000/csrf-token", { withCredentials: true })
       .then((response) => setCsrfToken(response.data.csrfToken))
       .catch((err) =>
         console.error("Erreur lors de la récupération du token CSRF :", err)
       );
-  }, []);*/
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ const ContactForm = () => {
     const sanitizedObject = DOMPurify.sanitize(object);
     const sanitizedRequest = DOMPurify.sanitize(request);
 
-    /*try {
+    try {
       setLoading(true);
       await axios.post(
         "http://localhost:5000/contacts",
@@ -66,7 +66,7 @@ const ContactForm = () => {
       console.error("Erreur lors de l'envoi du message :", err);
     } finally {
       setLoading(false);
-    }*/
+    }
   };
 
   return (

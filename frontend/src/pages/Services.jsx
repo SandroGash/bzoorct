@@ -10,7 +10,7 @@ const Services = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
@@ -27,7 +27,7 @@ const Services = () => {
     };
 
     fetchServices();
-  }, []);*/
+  }, []);
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;

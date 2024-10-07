@@ -1,9 +1,11 @@
 <?php
+namespace Zoo\Management\Models\Entities;
 
-require_once "models/Model.php";
+use Zoo\Management\Models\Connection\Model;
+use \PDO;
 
 //Classe pour récupérer les données
-class APIFIsher extends Model {
+class APIFisher extends Model {
     public function getDBAnimals(){
         $req = "SELECT a.name AS animal_name, r.name AS race_name, h.name AS habitat_name, h.habitat_id, a.animal_id, image.image_URL
                 FROM animal a
@@ -67,11 +69,11 @@ class APIFIsher extends Model {
                     image.image_URL 
                 FROM habitat 
                 JOIN image ON habitat.image_id = image.image_id
-                WHERE habitat.habitat_id = :id"; // Utiliser le nom de l'habitat pour la recherche
+                WHERE habitat.habitat_id = :id";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":id", $id, PDO::PARAM_STR); // Lier le nom ici
+        $stmt->bindValue(":id", $id, PDO::PARAM_STR);
         $stmt->execute();
-        $infosHabitat = $stmt->fetch(PDO::FETCH_ASSOC); // Utiliser fetch si vous n'attendez qu'un seul résultat
+        $infosHabitat = $stmt->fetch(PDO::FETCH_ASSOC); 
         $stmt->closeCursor();
         return $infosHabitat;
     }
@@ -80,7 +82,7 @@ class APIFIsher extends Model {
         $req = "SELECT r.name AS race_name, h.name AS habitat_name
                 FROM race r
                 INNER JOIN habitat h ON h.habitat_id = r.habitat_id
-                 WHERE r.race_id = :idRace               
+                WHERE r.race_id = :idRace               
         ";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":idRace",$idRace,PDO::PARAM_INT);

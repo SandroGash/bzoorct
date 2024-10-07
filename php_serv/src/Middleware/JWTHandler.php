@@ -1,10 +1,17 @@
 <?php
+namespace Zoo\Management\Middleware;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 
 class JWTHandler {
-    private static $secretKey = 'your_secret_key'; // Clé secrète (à stocker dans un fichier .env idéalement)
+    
+    private static $secretKey = '$_ENV[SECRET_KEY]'; // Clé secrète (à stocker dans un fichier .env idéalement)
     private static $algorithm = 'HS256'; // Algorithme de signature JWT
 
     // Générer un token JWT

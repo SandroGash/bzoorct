@@ -9,7 +9,7 @@ const OpinionsForm = () => {
   const [success, setSuccess] = useState("");
   const [csrfToken, setCsrfToken] = useState("");
 
-  /*useEffect(() => {
+  useEffect(() => {
     axios
       .get("http://localhost:5000/csrf-token", { withCredentials: true })
       .then((response) => setCsrfToken(response.data.csrfToken))
@@ -58,7 +58,7 @@ const OpinionsForm = () => {
     } finally {
       setLoading(false); // Désactive l'état de chargement
     }
-  };*/
+  };
 
   return (
     <div className="bg-[#E9DECB] pt-14 rounded-lg shadow-md flex flex-col items-center">
@@ -67,7 +67,7 @@ const OpinionsForm = () => {
       </h2>
       {success && <p className="text-green-500 text-center mb-4">{success}</p>}
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-      {/*<form
+      <form
         onSubmit={handleSubmit}
         className="space-y-4  flex flex-col items-center pb-10"
       >
@@ -109,7 +109,7 @@ const OpinionsForm = () => {
         >
           Envoyer
         </button>
-      </form>*/}
+      </form>
     </div>
   );
 };

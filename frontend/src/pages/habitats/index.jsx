@@ -5,12 +5,12 @@ import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 import Navbar from "../../components/layout/NavBar";
 
-const index = () => {
+const Index = () => {
   const [habitats, setHabitats] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchHabitats = async () => {
       try {
         const response = await axios.get(
@@ -35,7 +35,7 @@ const index = () => {
         <div role="status">
           <svg
             aria-hidden="true"
-            class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -49,11 +49,11 @@ const index = () => {
               fill="currentFill"
             />
           </svg>
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     );
-  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;*/
+  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;
 
   return (
     <>
@@ -78,4 +78,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

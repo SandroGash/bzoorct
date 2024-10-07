@@ -12,7 +12,7 @@ const HabitatDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchHabitat = async () => {
       try {
         const response = await axios.get(
@@ -30,7 +30,7 @@ const HabitatDetails = () => {
   }, [id]);
 
   if (loading) return <p className="text-center">Loading...</p>;
-  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;*/
+  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;
 
   return (
     habitat && (

@@ -11,7 +11,7 @@ const AnimalDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const fetchAnimal = async () => {
       try {
         const response = await axios.get(
@@ -29,7 +29,7 @@ const AnimalDetails = () => {
   }, [id]);
 
   if (loading) return <p className="text-center">Loading...</p>;
-  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;*/
+  if (error) return <p className="text-center text-red-500">Erreur: {error}</p>;
 
   return (
     animal && (
